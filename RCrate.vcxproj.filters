@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\imgui">
+      <UniqueIdentifier>{37744b94-1c12-4226-b913-1237be3807fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgui">
+      <UniqueIdentifier>{8037f823-e7b2-4053-8aa8-3fba1771fafd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\glad">
+      <UniqueIdentifier>{27438105-3d19-4a6b-91c8-e1e8f826e25a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{046def30-76be-4e9e-affc-8c94c9dd474d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{d102fb12-e1e6-4c83-b090-faa19a9e34f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\File">
+      <UniqueIdentifier>{6a95691b-7cd7-4185-960b-448cac23d839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\File">
+      <UniqueIdentifier>{5324dadc-5b0d-4407-b864-188605bb5ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\UIComponent">
+      <UniqueIdentifier>{de4a83c3-3e69-474f-8e3e-e56cd6ee64de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\UiComponent">
+      <UniqueIdentifier>{f394479c-0d4a-49ee-ae9a-c9b23857dedf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_widgets.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_demo.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_draw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_impl_glfw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_tables.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\glad\glad.c">
+      <Filter>Source Files\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_stdlib.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="script\File\Audio.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="script\File\File.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="script\File\GCR.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="script\UI\MenuBar.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="script\UI\UI.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\imgui\imstb_textedit.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_truetype.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imconfig.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_glfw.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_opengl3.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_internal.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_rectpack.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="UIComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaybackComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MetronomeComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="FileInfoComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioInfoComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_stdlib.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="script\File\Audio.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="script\File\File.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="script\File\GCR.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\MenuBar.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\UI.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="exclude\test.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+</Project>
