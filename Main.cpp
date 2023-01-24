@@ -17,6 +17,9 @@
 #include "script\UI\UIComponents\FileInfoComponent.h"
 #include "script\UI\UIComponents\AudioInfoComponent.h"
 
+#include "script\shader\Shader.h"
+#include "script\drawing\Drawing.h"
+
 #include "script\File\GCR.h"
 
 
@@ -61,7 +64,7 @@ int main()
 		return -1;
 	}
 
-	//glViewport(1920 / 4., 1080 / 4., 1920 / 4., 1080 / 4.);
+	glViewport(0,0, screenWidth, screenHeight);
 
 	glfwSetWindowSizeCallback(window, OnWindowSizeChanged);
 
@@ -128,14 +131,22 @@ int main()
 
 
 
-	
+	Shader::ShaderDefinitions::Shader defaultShader(Shader::ShaderDefinitions::vertexShader, Shader::ShaderDefinitions::fragmentShader);
 	UI::MenuBar menu;
+
+
+	defaultShader.Use();
+	Drawing::Line line;
+
+	glLineWidth(50);
 
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	
+		line.Draw();
+
 
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
@@ -173,10 +184,15 @@ int main()
 
 void OnWindowSizeChanged(GLFWwindow* window, int width, int height)
 {
-	
+	if (width == 0 || height == 0)
+	{
+		return;
+	}
+
+
 	glfwSetWindowSize(window, width, height);
-
-
+	glViewport(0, 0, width, height);
+	
 	float xRatio = width / (float)screenWidth;
 	float yRatio = height / (float)screenHeight;
 

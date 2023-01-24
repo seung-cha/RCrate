@@ -154,9 +154,13 @@
     <ClInclude Include="FileInfoComponent.h" />
     <ClInclude Include="MetronomeComponent.h" />
     <ClInclude Include="PlaybackComponent.h" />
+    <ClInclude Include="script\drawing\Drawing.h" />
     <ClInclude Include="script\File\Audio.h" />
     <ClInclude Include="script\File\File.h" />
     <ClInclude Include="script\File\GCR.h" />
+    <ClInclude Include="script\shader\Shader.h" />
+    <ClInclude Include="script\shader\ShaderDefinition.h" />
+    <ClInclude Include="script\track\TrackSystem.h" />
     <ClInclude Include="script\UI\MenuBar.h" />
     <ClInclude Include="script\UI\UI.h" />
     <ClInclude Include="src\imgui\imconfig.h" />

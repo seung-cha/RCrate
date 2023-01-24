@@ -40,6 +40,18 @@
     <Filter Include="Source Files\UI\UiComponent">
       <UniqueIdentifier>{f394479c-0d4a-49ee-ae9a-c9b23857dedf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Track">
+      <UniqueIdentifier>{a4c18d20-9853-41d9-bce0-cff420b0f0b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Track">
+      <UniqueIdentifier>{a935f072-805f-4e34-87bb-44675e2deac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Drawing">
+      <UniqueIdentifier>{5d75365b-0624-49f9-a8ea-afe143c66864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shader">
+      <UniqueIdentifier>{c8a64baa-e855-4e7e-8f22-1b61c3cb4b14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -148,6 +160,18 @@
     </ClInclude>
     <ClInclude Include="script\UI\UI.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="script\track\TrackSystem.h">
+      <Filter>Header Files\Track</Filter>
+    </ClInclude>
+    <ClInclude Include="script\drawing\Drawing.h">
+      <Filter>Header Files\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="script\shader\Shader.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="script\shader\ShaderDefinition.h">
+      <Filter>Header Files\Shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
