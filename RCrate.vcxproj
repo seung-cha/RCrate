@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\pro gamer\source\repos\RCrate\RCrate\script\UI\UIComponents;C:\Users\pro gamer\source\repos\RCrate\RCrate\script\UI;C:\Users\pro gamer\source\repos\RCrate\RCrate\script\File;C:\Users\pro gamer\source\repos\RCrate\RCrate\dep\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\pro gamer\source\repos\RCrate\RCrate\script;C:\Users\pro gamer\source\repos\RCrate\RCrate\dep\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\pro gamer\source\repos\RCrate\RCrate\dep\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -136,7 +136,9 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="script\File\Audio.cpp" />
     <ClCompile Include="script\File\File.cpp" />
+    <ClCompile Include="script\File\Flag.cpp" />
     <ClCompile Include="script\File\GCR.cpp" />
+    <ClCompile Include="script\track\Track.cpp" />
     <ClCompile Include="script\UI\MenuBar.cpp" />
     <ClCompile Include="script\UI\UI.cpp" />
     <ClCompile Include="src\glad\glad.c" />
@@ -150,19 +152,23 @@
     <ClCompile Include="src\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioInfoComponent.h" />
-    <ClInclude Include="FileInfoComponent.h" />
-    <ClInclude Include="MetronomeComponent.h" />
-    <ClInclude Include="PlaybackComponent.h" />
     <ClInclude Include="script\drawing\Drawing.h" />
     <ClInclude Include="script\File\Audio.h" />
     <ClInclude Include="script\File\File.h" />
+    <ClInclude Include="script\File\Flag.h" />
     <ClInclude Include="script\File\GCR.h" />
     <ClInclude Include="script\shader\Shader.h" />
     <ClInclude Include="script\shader\ShaderDefinition.h" />
+    <ClInclude Include="script\track\Track.h" />
     <ClInclude Include="script\track\TrackSystem.h" />
     <ClInclude Include="script\UI\MenuBar.h" />
     <ClInclude Include="script\UI\UI.h" />
+    <ClInclude Include="script\UI\UIComponents\AudioInfoComponent.h" />
+    <ClInclude Include="script\UI\UIComponents\FileInfoComponent.h" />
+    <ClInclude Include="script\UI\UIComponents\MetronomeComponent.h" />
+    <ClInclude Include="script\UI\UIComponents\PlaybackComponent.h" />
+    <ClInclude Include="script\UI\UIComponents\TrackSettingsComponent.h" />
+    <ClInclude Include="script\UI\UIComponents\UIComponent.h" />
     <ClInclude Include="src\imgui\imconfig.h" />
     <ClInclude Include="src\imgui\imgui.h" />
     <ClInclude Include="src\imgui\imgui_impl_glfw.h" />
@@ -173,7 +179,6 @@
     <ClInclude Include="src\imgui\imstb_rectpack.h" />
     <ClInclude Include="src\imgui\imstb_textedit.h" />
     <ClInclude Include="src\imgui\imstb_truetype.h" />
-    <ClInclude Include="UIComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="exclude\test.mp3" />

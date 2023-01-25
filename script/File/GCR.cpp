@@ -72,7 +72,6 @@ namespace GCR
 	}
 
 
-
 	File* GCR::GetFile()
 	{
 		if (file == NULL)
@@ -82,6 +81,67 @@ namespace GCR
 		}
 
 		return file;
+		return NULL;
 	}
+	
+	
+	void GCR::AddBPMFlag(Flags::BeatChangeFlag* flag)
+	{
+
+		if (flags.size() == 0 && flag->time != 0)
+		{
+			std::cout << "An initial flag is set" << std::endl;
+			flags.push_back(new Flags::BeatChangeFlag(flag->bpm));
+		}
+
+		int pos = 0;
+
+		for (int i = 0; i < flags.size(); i++)
+		{
+
+			if (flags[i]->time == flag->time)
+			{
+				std::cout << "Beat Change Flag Insertion Error: A Flag exists at " << flag->time << std::endl;
+				return;
+			}
+
+			if (flag->time > flags[i]->time)
+			{
+				pos = i+1;
+			}
+
+		}
+
+		if (pos >= flags.size())
+			flags.push_back(flag);
+		else
+		flags.insert(flags.begin() + pos, flag);
+
+
+		std::cout << "A flag is set at time: " << flag->time << ", BPM: " << flag->bpm << std::endl;
+
+		std::cout << std::endl << std::endl;
+		std::cout << "DEBUG : FLAG ITERATION: " << std::endl;
+
+		for (int i = 0; i < flags.size(); i++)
+		{
+			std::cout << "Location: " << i;
+			std::cout << " Time: " << flags[i]->time << "; BPM: " << flags[i]->bpm << std::endl;
+		}
+
+
+	}
+
+	void GCR::ApplyFlags()
+	{
+		for (int i = 0; i < flags.size(); i++)
+		{
+			flags[i]->Apply(Get()->GetAudio(), Get()->GetFile());
+		}
+
+	}
+	
+
+
 }
 

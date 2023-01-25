@@ -9,6 +9,8 @@ namespace GCR
 	{
 		artistName.clear();
 		songName.clear();
+		bpm = 0;
+		spb = 0;
 	}
 	void File::Clear()
 	{
@@ -49,5 +51,28 @@ namespace GCR
 	{
 		artistName.clear();
 	}
+
+
+	float File::GetBPM()
+	{
+		return bpm;
+	}
+
+	float File::GetSPB()
+	{
+		return spb;
+	}
+
+	void File::SetBPM(float newBPM)
+	{
+		bpm = newBPM;
+		spb = 60 / bpm;
+	}
+	
+
+
+
+
+
 
 }

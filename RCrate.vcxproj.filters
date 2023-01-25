@@ -90,14 +90,20 @@
     <ClCompile Include="script\File\File.cpp">
       <Filter>Source Files\File</Filter>
     </ClCompile>
-    <ClCompile Include="script\File\GCR.cpp">
-      <Filter>Source Files\File</Filter>
-    </ClCompile>
     <ClCompile Include="script\UI\MenuBar.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="script\UI\UI.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="script\track\Track.cpp">
+      <Filter>Source Files\Track</Filter>
+    </ClCompile>
+    <ClCompile Include="script\File\GCR.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="script\File\Flag.cpp">
+      <Filter>Source Files\File</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,21 +134,6 @@
     <ClInclude Include="src\imgui\imgui_impl_opengl3_loader.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="UIComponent.h">
-      <Filter>Header Files\UI\UIComponent</Filter>
-    </ClInclude>
-    <ClInclude Include="PlaybackComponent.h">
-      <Filter>Header Files\UI\UIComponent</Filter>
-    </ClInclude>
-    <ClInclude Include="MetronomeComponent.h">
-      <Filter>Header Files\UI\UIComponent</Filter>
-    </ClInclude>
-    <ClInclude Include="FileInfoComponent.h">
-      <Filter>Header Files\UI\UIComponent</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioInfoComponent.h">
-      <Filter>Header Files\UI\UIComponent</Filter>
-    </ClInclude>
     <ClInclude Include="src\imgui\imgui_stdlib.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
@@ -172,6 +163,30 @@
     </ClInclude>
     <ClInclude Include="script\shader\ShaderDefinition.h">
       <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="script\track\Track.h">
+      <Filter>Header Files\Track</Filter>
+    </ClInclude>
+    <ClInclude Include="script\File\Flag.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\UIComponents\UIComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\UIComponents\PlaybackComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\UIComponents\TrackSettingsComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\UIComponents\AudioInfoComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\UIComponents\FileInfoComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="script\UI\UIComponents\MetronomeComponent.h">
+      <Filter>Header Files\UI\UIComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

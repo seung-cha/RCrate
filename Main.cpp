@@ -16,9 +16,10 @@
 #include "script\UI\UIComponents\MetronomeComponent.h"
 #include "script\UI\UIComponents\FileInfoComponent.h"
 #include "script\UI\UIComponents\AudioInfoComponent.h"
+#include "script\UI\UIComponents\TrackSettingsComponent.h"
 
 #include "script\shader\Shader.h"
-#include "script\drawing\Drawing.h"
+#include "script\track\Track.h"
 
 #include "script\File\GCR.h"
 
@@ -84,7 +85,8 @@ int main()
 		UI::UI("Track Settings",
 		ImVec2(0, height_half),
 		ImVec2(width_quarter/2, height_half),
-		ImVec2(0, 0.5f)
+		ImVec2(0, 0.5f),
+			new UIComponent::TrackSettingsComponent
 		)
 	);
 
@@ -136,16 +138,20 @@ int main()
 
 
 	defaultShader.Use();
-	Drawing::Line line;
+	Track::Track track;
 
-	glLineWidth(50);
+	glLineWidth(5);
 
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	
-		line.Draw();
+
+		GCR::GCR::Get()->ApplyFlags();
+
+		track.Render();
+		//line.Draw();
 
 
 		ImGui_ImplOpenGL3_NewFrame();

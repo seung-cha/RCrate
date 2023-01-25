@@ -3,6 +3,8 @@
 
 #include <string>
 #include <stdlib.h>
+#include <vector>
+
 
 namespace GCR
 {
@@ -28,12 +30,20 @@ namespace GCR
 		void ClearSongName();
 		std::string GetSongName();
 
+		float GetBPM();
+		float GetSPB();
+
+		void SetBPM(float newBPM);
+
+
 
 
 	private:
-		int offset = 0;
+		float bpm, spb;
+		unsigned int offset;
 		std::string artistName;
 		std::string songName;
+
 
 
 

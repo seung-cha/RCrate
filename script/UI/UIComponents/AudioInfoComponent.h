@@ -4,6 +4,7 @@
 #include "script\UI\UIComponents\UIComponent.h"
 #include "src\imgui\imgui.h"
 #include "script\File\GCR.h"
+#include <string.h>
 
 namespace UIComponent
 {
@@ -30,6 +31,9 @@ namespace UIComponent
 				return;
 			}
 
+			ImGui::Text("Current BPM:");
+			ImGui::SameLine();
+			ImGui::Text(std::to_string(GCR::GCR::Get()->GetFile()->GetBPM()).c_str());
 
 
 

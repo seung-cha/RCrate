@@ -6,6 +6,8 @@
 
 #include "..\src\glm\glm.hpp"
 
+#include <iostream>
+
 namespace Drawing
 {
 	struct Line
@@ -17,6 +19,7 @@ namespace Drawing
 
 		Line()
 		{
+			std::cout << "init" << std::endl;
 			x1.x = -1;
 			x1.y = 0;
 			x2.x = 1;
@@ -47,6 +50,7 @@ namespace Drawing
 
 
 			float arr[4] = { x1.x, x1.y, x2.x, x2.y };
+
 			glBindVertexArray(VAO);
 			glBindBuffer(GL_ARRAY_BUFFER, VBO);
 			glBufferData(GL_ARRAY_BUFFER, sizeof(arr), arr, GL_STATIC_DRAW);
