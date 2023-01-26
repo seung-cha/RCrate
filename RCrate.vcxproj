@@ -153,6 +153,7 @@
     <ClCompile Include="src\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="script\drawing\BeatLine.h" />
     <ClInclude Include="script\drawing\Drawing.h" />
     <ClInclude Include="script\File\Audio.h" />
     <ClInclude Include="script\File\File.h" />

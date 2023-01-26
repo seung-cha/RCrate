@@ -19,7 +19,7 @@ namespace Drawing
 
 		Line()
 		{
-			std::cout << "init" << std::endl;
+			
 			x1.x = -1;
 			x1.y = 0;
 			x2.x = 1;

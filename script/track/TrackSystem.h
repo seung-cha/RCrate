@@ -3,6 +3,8 @@
 
 #include <vector>
 #include "Track.h"
+#include "..\script\File\GCR.h"
+#include "..\script\drawing\BeatLine.h"
 
 namespace Track
 {
@@ -14,7 +16,9 @@ namespace Track
 
 
 	private:
+		float GetLatestLine();
 		std::vector<Track*> tracks;
+		std::vector<Drawing::BeatLine*> beatLines;
 		static TrackSystem* Instance;
 
 	};

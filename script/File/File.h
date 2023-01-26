@@ -39,7 +39,8 @@ namespace GCR
 
 
 	private:
-		float bpm, spb;
+		float bpm = 0;
+		float spb = 0;
 		unsigned int offset;
 		std::string artistName;
 		std::string songName;

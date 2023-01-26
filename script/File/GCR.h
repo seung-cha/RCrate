@@ -28,6 +28,7 @@ namespace GCR
 		File* GetFile();
 		bool RequestNewAudio();
 
+		float CurrentSPB();
 		void AddBPMFlag(Flags::BeatChangeFlag* flag);
 		void ApplyFlags();
 

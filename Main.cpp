@@ -140,6 +140,7 @@ int main()
 
 
 	defaultShader.Use();
+	Drawing::Line beatLine(glm::vec2(0, 0.3f), glm::vec2(0, -0.3f));
 
 	glLineWidth(5);
 
@@ -152,6 +153,8 @@ int main()
 		GCR::GCR::Get()->ApplyFlags();
 
 		Track::TrackSystem::Get()->Render();
+		beatLine.Draw();
+
 		//line.Draw();
 
 

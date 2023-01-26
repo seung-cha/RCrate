@@ -191,6 +191,9 @@
     <ClInclude Include="script\UI\UIComponents\MetronomeComponent.h">
       <Filter>Header Files\UI\UIComponent</Filter>
     </ClInclude>
+    <ClInclude Include="script\drawing\BeatLine.h">
+      <Filter>Header Files\Drawing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Media Include="exclude\test.mp3">

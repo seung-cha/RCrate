@@ -101,7 +101,8 @@ namespace GCR
 
 			if (flags[i]->time == flag->time)
 			{
-				std::cout << "Beat Change Flag Insertion Error: A Flag exists at " << flag->time << std::endl;
+				flags[i]->bpm = flag->bpm;
+				std::cout << "Beat Change Flag Insertion: A Flag exists at " << flag->time <<", overriding BPM" << std::endl;
 				return;
 			}
 
@@ -139,6 +140,14 @@ namespace GCR
 			flags[i]->Apply(Get()->GetAudio(), Get()->GetFile());
 		}
 
+	}
+
+	float GCR::CurrentSPB()
+	{
+		if (audioSource == NULL || file == NULL)
+			return 0;
+
+		return file->GetSPB() != 0 ? audioSource->CurrentSeconds() / file->GetSPB() : 0;
 	}
 	
 
