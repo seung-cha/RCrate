@@ -105,6 +105,9 @@
     <ClCompile Include="script\File\Flag.cpp">
       <Filter>Source Files\File</Filter>
     </ClCompile>
+    <ClCompile Include="script\track\TrackSystem.cpp">
+      <Filter>Source Files\Track</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\imgui\imstb_textedit.h">

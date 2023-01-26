@@ -21,6 +21,8 @@
 #include "script\shader\Shader.h"
 #include "script\track\Track.h"
 
+#include "script\track\TrackSystem.h"
+
 #include "script\File\GCR.h"
 
 
@@ -138,7 +140,6 @@ int main()
 
 
 	defaultShader.Use();
-	Track::Track track;
 
 	glLineWidth(5);
 
@@ -150,7 +151,7 @@ int main()
 
 		GCR::GCR::Get()->ApplyFlags();
 
-		track.Render();
+		Track::TrackSystem::Get()->Render();
 		//line.Draw();
 
 

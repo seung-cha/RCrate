@@ -9,13 +9,14 @@ namespace Track
 	class Track
 	{
 	public:
-		Track();
+		Track(int ID);
 
 		void Render(); 
 
 
 
 	private:
+		int ID;
 		Drawing::Line horizontalLines[2];
 		float width, centre;
 

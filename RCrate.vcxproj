@@ -139,6 +139,7 @@
     <ClCompile Include="script\File\Flag.cpp" />
     <ClCompile Include="script\File\GCR.cpp" />
     <ClCompile Include="script\track\Track.cpp" />
+    <ClCompile Include="script\track\TrackSystem.cpp" />
     <ClCompile Include="script\UI\MenuBar.cpp" />
     <ClCompile Include="script\UI\UI.cpp" />
     <ClCompile Include="src\glad\glad.c" />

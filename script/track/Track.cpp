@@ -4,10 +4,11 @@
 namespace Track
 {
 
-	Track::Track()
+	Track::Track(int ID)
 	{
+		this->ID = ID;
 		width = 0.25f;
-		centre = 0;
+		centre = ID * width*2;
 
 		horizontalLines[0].x1.y = centre + width;
 		horizontalLines[0].x2.y = centre + width;
