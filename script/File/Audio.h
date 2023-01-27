@@ -21,6 +21,8 @@ namespace GCR
 		void Reset();
 		bool IsPaused();
 		bool IsDone();
+
+		static float ToSeconds(unsigned int millisecond);
 		int LengthMillis();
 		int CurrentMillis();
 		float LengthSeconds();

@@ -132,7 +132,7 @@ int main()
 			new UIComponent::MetronomeComponent
 		)
 	);
-
+	
 
 
 	Shader::ShaderDefinitions::Shader defaultShader(Shader::ShaderDefinitions::vertexShader, Shader::ShaderDefinitions::fragmentShader);
@@ -143,6 +143,8 @@ int main()
 	Drawing::Line beatLine(glm::vec2(0, 0.3f), glm::vec2(0, -0.3f));
 
 	glLineWidth(5);
+	glEnable(GL_LINE_SMOOTH);
+
 
 	while (!glfwWindowShouldClose(window))
 	{

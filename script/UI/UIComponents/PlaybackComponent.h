@@ -68,7 +68,6 @@ namespace UIComponent
 			
 			if (sliderSelected)
 			{
-				std::cout << "Slider is Selected!" << std::endl;
 				GCR::GCR::Get()->GetAudio()->Pause();
 				GCR::GCR::Get()->GetAudio()->SetCurrent(currentPlayback);
 			}

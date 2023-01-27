@@ -38,7 +38,7 @@ namespace GCR
 		static GCR* Instance;
 		Audio* audioSource = NULL;
 		File* file = NULL;
-		std::vector < Flags::BeatChangeFlag* > flags;
+		std::vector < Flags::BeatChangeFlag* > beatFlags;
 
 
 	};

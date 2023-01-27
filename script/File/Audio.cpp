@@ -93,6 +93,10 @@ namespace GCR
 		return audio->getPlayPosition();
 	}
 
+	float Audio::ToSeconds(unsigned int millisecond)
+	{
+		return millisecond / (float)1000;
+	}
 	float Audio::LengthSeconds()
 	{
 		return audio->getPlayLength() / (float)1000;

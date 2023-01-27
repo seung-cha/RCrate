@@ -88,35 +88,35 @@ namespace GCR
 	void GCR::AddBPMFlag(Flags::BeatChangeFlag* flag)
 	{
 
-		if (flags.size() == 0 && flag->time != 0)
+		if (beatFlags.size() == 0 && flag->time != 0)
 		{
 			std::cout << "An initial flag is set" << std::endl;
-			flags.push_back(new Flags::BeatChangeFlag(flag->bpm));
+			beatFlags.push_back(new Flags::BeatChangeFlag(flag->bpm));
 		}
 
 		int pos = 0;
 
-		for (int i = 0; i < flags.size(); i++)
+		for (int i = 0; i < beatFlags.size(); i++)
 		{
 
-			if (flags[i]->time == flag->time)
+			if (beatFlags[i]->time == flag->time)
 			{
-				flags[i]->bpm = flag->bpm;
+				beatFlags[i]->bpm = flag->bpm;
 				std::cout << "Beat Change Flag Insertion: A Flag exists at " << flag->time <<", overriding BPM" << std::endl;
 				return;
 			}
 
-			if (flag->time > flags[i]->time)
+			if (flag->time > beatFlags[i]->time)
 			{
 				pos = i+1;
 			}
 
 		}
 
-		if (pos >= flags.size())
-			flags.push_back(flag);
+		if (pos >= beatFlags.size())
+			beatFlags.push_back(flag);
 		else
-		flags.insert(flags.begin() + pos, flag);
+			beatFlags.insert(beatFlags.begin() + pos, flag);
 
 
 		std::cout << "A flag is set at time: " << flag->time << ", BPM: " << flag->bpm << std::endl;
@@ -124,10 +124,10 @@ namespace GCR
 		std::cout << std::endl << std::endl;
 		std::cout << "DEBUG : FLAG ITERATION: " << std::endl;
 
-		for (int i = 0; i < flags.size(); i++)
+		for (int i = 0; i < beatFlags.size(); i++)
 		{
 			std::cout << "Location: " << i;
-			std::cout << " Time: " << flags[i]->time << "; BPM: " << flags[i]->bpm << std::endl;
+			std::cout << " Time: " << beatFlags[i]->time << "; BPM: " << beatFlags[i]->bpm << std::endl;
 		}
 
 
@@ -135,9 +135,9 @@ namespace GCR
 
 	void GCR::ApplyFlags()
 	{
-		for (int i = 0; i < flags.size(); i++)
+		for (int i = 0; i < beatFlags.size(); i++)
 		{
-			flags[i]->Apply(Get()->GetAudio(), Get()->GetFile());
+			beatFlags[i]->Apply(Get()->GetAudio(), Get()->GetFile());
 		}
 
 	}
@@ -147,7 +147,36 @@ namespace GCR
 		if (audioSource == NULL || file == NULL)
 			return 0;
 
-		return file->GetSPB() != 0 ? audioSource->CurrentSeconds() / file->GetSPB() : 0;
+		if (file->GetSPB() == 0)
+			return 0;
+
+
+		float time = 0;
+		float dist = 0;
+
+		for (int i = 0; i < beatFlags.size(); i++)
+		{
+			if (beatFlags[i]->time >= audioSource->CurrentMillis())
+			{
+				return time;
+			}
+
+
+			if (i == beatFlags.size() - 1)
+			{
+				dist = Audio::ToSeconds(audioSource->CurrentMillis() - beatFlags[i]->time);
+			}
+			else if (audioSource->CurrentMillis() < beatFlags[i+1]->time)
+			{
+				dist = Audio::ToSeconds(audioSource->CurrentMillis() - beatFlags[i]->time);
+			}
+			else
+			dist = Audio::ToSeconds(beatFlags[i+1]->time - beatFlags[i]->time);
+
+
+			time += (dist) / (60 / beatFlags[i]->bpm);
+		}
+		return time;
 	}
 	
 

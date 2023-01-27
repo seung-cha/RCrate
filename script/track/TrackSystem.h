@@ -17,6 +17,7 @@ namespace Track
 
 	private:
 		float GetLatestLine();
+		float GetEarliestLine();
 		std::vector<Track*> tracks;
 		std::vector<Drawing::BeatLine*> beatLines;
 		static TrackSystem* Instance;

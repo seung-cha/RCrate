@@ -22,10 +22,16 @@ namespace Track
 
 		for (int i = 0; i < beatLines.size(); i++)
 		{
-			if (beatLines[i]->time - GCR::GCR::Get()->CurrentSPB() < -1)
+			if (beatLines[i]->time - GCR::GCR::Get()->CurrentSPB() < -5)
 			{
 				beatLines[i]->time = GetLatestLine() + 1;
 			}
+
+			if (beatLines[i]->time - GCR::GCR::Get()->CurrentSPB() > 5)
+			{
+				beatLines[i]->time = GetEarliestLine() - 1;
+			}
+
 		}
 
 	}
@@ -40,9 +46,10 @@ namespace Track
 			//Instance->tracks.push_back(new Track(1));
 
 
-			for (int i = 0; i < 7; i++)
+			for (int i = 0; i < 10; i++)
 			{
-				Instance->beatLines.push_back(new Drawing::BeatLine( (i)));
+				
+				Instance->beatLines.push_back(new Drawing::BeatLine( (i-5)));
 			}
 
 		}
@@ -53,9 +60,23 @@ namespace Track
 	float TrackSystem::GetLatestLine()
 	{
 		float rt = beatLines[0]->time;
-		for (int i = 0; i < beatLines.size(); i++)
+		for (int i = 1; i < beatLines.size(); i++)
 		{
 			if (beatLines[i]->time > rt)
+			{
+				rt = beatLines[i]->time;
+			}
+		}
+
+		return rt;
+	}
+
+	float TrackSystem::GetEarliestLine()
+	{
+		float rt = beatLines[0]->time;
+		for (int i = 1; i < beatLines.size(); i++)
+		{
+			if (beatLines[i]->time < rt)
 			{
 				rt = beatLines[i]->time;
 			}
