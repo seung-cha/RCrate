@@ -35,16 +35,8 @@ namespace UIComponent
 
 		void DrawComponent(float width, float height) override
 		{
-			if (play || playAlong)
+			if (play)
 			{
-
-				if (playAlong && playFlag)
-				{
-					GCR::GCR::Get()->GetAudio()->ToStart();
-					GCR::GCR::Get()->GetAudio()->Play();
-					playFlag = false;
-				}
-
 				// ISSUE: While window being dragged metronome pauses while the music keeps playing.
 				double elapsed = glfwGetTime() - time;
 				tickTime = elapsed / spb;
@@ -62,13 +54,55 @@ namespace UIComponent
 
 			}
 			else
+			{
+				count = 1;
 				time = glfwGetTime();
+			}
+
+
+			if (playAlong && GCR::GCR::Get()->GetAudio() != NULL && GCR::GCR::Get()->GetFile() != NULL)
+			{
+				if (GCR::GCR::Get()->GetAudio()->IsASafeObject() && GCR::GCR::Get()->GetFile()->GetSPB() != 0)
+				{
+
+					if (!GCR::GCR::Get()->GetAudio()->IsPaused())
+					{
+						int currentPos = GCR::GCR::Get()->GetAudio()->CurrentSeconds() / GCR::GCR::Get()->GetFile()->GetSPB();
+						if (currentPos > prevPos)
+						{
+
+							tick1->Play();
+						}
+
+							prevPos = currentPos;
+
+
+					}
+					else
+					{
+						prevPos = GCR::GCR::Get()->GetAudio()->CurrentSeconds() / GCR::GCR::Get()->GetFile()->GetSPB();
+					}
+
+
+
+
+				}
+			}
+
+
 
 
 			ImGui::BeginChild("Child");
 
 			if (ImGui::Button("Play") && !playAlong)
+			{
+				if (!play)
+				{
+					tick1->Play();
+				}
+
 				play = !play;
+			}
 
 			if (GCR::GCR::Get()->GetAudio() != NULL)
 			{
@@ -77,7 +111,13 @@ namespace UIComponent
 					if (ImGui::Button("Play With Audio") && !play)
 					{
 						playAlong = !playAlong;
-						playFlag = true;
+
+						if (playAlong)
+							std::cout << "Metronome Enabled: along with audio" << std::endl;
+						else
+							std::cout << "Metronome Disabled: along with audio" << std::endl;
+
+
 					}
 				}
 			}
@@ -110,9 +150,9 @@ namespace UIComponent
 		double tickTime;
 		int bpm;
 		float spb;
+		int prevPos;
 		bool play;
 		bool playAlong;
-		bool playFlag;
 		GCR::Audio* tick1;
 		GCR::Audio* tick2;
 
