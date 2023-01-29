@@ -11,7 +11,7 @@ namespace Track
 	public:
 		Track(int ID);
 
-		void Render(); 
+		void Render(int trackSize); 
 
 
 

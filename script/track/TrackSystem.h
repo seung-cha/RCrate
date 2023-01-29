@@ -13,6 +13,8 @@ namespace Track
 	public:
 		static TrackSystem* Get();
 		void Render();
+		void AddTrack();
+		void RemoveTrack();
 
 
 	private:

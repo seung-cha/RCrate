@@ -10,12 +10,13 @@ namespace Track
 	{
 		for (int i = 0; i < tracks.size(); i++)
 		{
-			tracks[i]->Render();
+			tracks[i]->Render(tracks.size());
 		}
 
 		for (int i = 0; i < beatLines.size(); i++)
 		{
-			beatLines[i]->Draw(0.25f, -0.25f, GCR::GCR::Get()->CurrentSPB());
+			//WE NEED TO OPTIMISE THIS!!
+			beatLines[i]->Draw( (0.25f/ tracks.size()) + (((0.25f / tracks.size()) * (tracks.size()-1)) * 2), -0.25f / tracks.size(), GCR::GCR::Get()->CurrentSPB());
 		}
 
 		//Temp:
@@ -44,6 +45,8 @@ namespace Track
 			Instance = new TrackSystem;
 			Instance->tracks.push_back(new Track(0));
 			//Instance->tracks.push_back(new Track(1));
+			//Instance->tracks.push_back(new Track(2));
+			//Instance->tracks.push_back(new Track(3));
 
 
 			for (int i = 0; i < 10; i++)
@@ -83,6 +86,29 @@ namespace Track
 		}
 
 		return rt;
+	}
+
+
+	void TrackSystem::AddTrack()
+	{
+		if (tracks.size() == 4)
+		{
+			std::cout << "Cannot Add Tracks Anymore!" << std::endl;
+			return;
+		}
+		tracks.push_back(new Track(tracks.size()));
+		return;
+	}
+
+	void TrackSystem::RemoveTrack()
+	{
+		if (tracks.size() == 1)
+		{
+			std::cout << "Cannot Remove Tracks Anymore!" << std::endl;
+			return;
+		}
+		tracks.pop_back();
+		return;
 	}
 
 

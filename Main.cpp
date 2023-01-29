@@ -140,7 +140,7 @@ int main()
 
 
 	defaultShader.Use();
-	Drawing::Line beatLine(glm::vec2(0, 0.3f), glm::vec2(0, -0.3f));
+	Drawing::Line beatLine(glm::vec2(0, 1), glm::vec2(0, -0.3f));
 
 	glLineWidth(5);
 	glEnable(GL_LINE_SMOOTH);

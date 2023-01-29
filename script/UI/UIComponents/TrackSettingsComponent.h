@@ -4,6 +4,7 @@
 #include "UIComponent.h"
 #include "..\src\imgui\imgui.h"
 #include "..\script\File\GCR.h"
+#include "..\script\track\TrackSystem.h"
 //#include "..\script\File\Flag.h"
 
 namespace UIComponent
@@ -47,6 +48,17 @@ namespace UIComponent
 			{
 				GCR::GCR::Get()->AddBPMFlag(new Flags::BeatChangeFlag(bpm
 					, GCR::GCR::Get()->GetAudio()->CurrentMillis()));
+			}
+
+			if (ImGui::Button("Add Track"))
+			{
+				Track::TrackSystem::Get()->AddTrack();
+			}
+
+
+			if (ImGui::Button("Remove Track"))
+			{
+				Track::TrackSystem::Get()->RemoveTrack();
 			}
 
 
